@@ -672,6 +672,8 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
             delegate.panStateChanged?(self, state: recognizer.state)
         }
         
+        renderer?.isPanning = recognizer.state != .ended
+        
         if recognizer.state == NSUIGestureRecognizerState.began && recognizer.nsuiNumberOfTouches() > 0
         {
             stopDeceleration()
