@@ -523,6 +523,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     
     @objc fileprivate func tapGestureRecognized(_ recognizer: NSUITapGestureRecognizer)
     {
+        return //we use pan over tap for highlighting.  this indirectly conflicts with mood chart where a sentinel value is being used as an array index
         if _data === nil
         {
             return
